@@ -4,6 +4,7 @@ import { SmurfContext } from '../contexts/SmurfContext.js'
 import axios from 'axios'
 
 import Smurfs from './Smurfs.js'
+import SmurfForm from './SmurfForm.js'
 
 const App = () => {
   const [smurfs, setSmurfs] = useState([])
@@ -18,10 +19,21 @@ const App = () => {
   }, [])
   console.log("smurfs STATE", smurfs)
 
+  const newSmurf = smurf => {
+    axios.post(`http://localhost:3333/smurfs`, smurf)
+      .then(res => {
+        console.log('POST', res)
+      })
+      .catch(err => console.error('error in POST', err))
+  }
+
+
+
   return (
     <div className='App'>
       <SmurfContext.Provider value={{ smurfs }}>
         <Smurfs />
+        <SmurfForm newSmurf={newSmurf}/>
       </SmurfContext.Provider>
     </div>
   )
