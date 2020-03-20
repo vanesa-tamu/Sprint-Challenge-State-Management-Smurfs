@@ -17,11 +17,20 @@ const SmurfForm = ({newSmurf}) => {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
+        newSmurf(smurf)
+        setSmurf({
+            name: '',
+            age: '',
+            height: ''
+        })
+    }
     console.log('SMURF FORM', smurf)
     return(
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor='name'>Name</label>
                 <input 
                     id='name'
@@ -49,6 +58,7 @@ const SmurfForm = ({newSmurf}) => {
                     value={smurf.height}
                     onChange={handleChange}
                 />
+                <button type='submit'>Join the Village</button>
             </form>
         </div>
     )

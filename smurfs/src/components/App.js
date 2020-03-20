@@ -9,6 +9,7 @@ import SmurfForm from './SmurfForm.js'
 const App = () => {
   const [smurfs, setSmurfs] = useState([])
 
+  
   useEffect(() => {
     axios.get(`http://localhost:3333/smurfs`)
       .then(res => {
@@ -19,12 +20,21 @@ const App = () => {
   }, [])
   console.log("smurfs STATE", smurfs)
 
+
   const newSmurf = smurf => {
-    axios.post(`http://localhost:3333/smurfs`, smurf)
+    //change age to number
+    const submitSmurf = {
+      name: smurf.name,
+      age: Number(smurf.age),
+      height: smurf.height
+    }
+
+    axios.post(`http://localhost:3333/smurfs`, submitSmurf)
       .then(res => {
         console.log('POST', res)
       })
       .catch(err => console.error('error in POST', err))
+
   }
 
 
