@@ -39,7 +39,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
       ```
-      Application state refers to the state that can be avaialble to any component on the component tree. One would use this when there are many components that rely on very specific parts of state but at different level of the component.
+      Application state refers to the state that can be avaialble to any component on the component tree. One would use this when there are many components that rely on very specific parts of state but at different levels of the component.
 
       Component state refers to state that is exclusively known to a component. One would use this for form managment since typically a form only needs to know the data being collected and nothing more. 
       ```

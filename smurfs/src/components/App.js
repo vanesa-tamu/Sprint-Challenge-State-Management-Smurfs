@@ -17,7 +17,7 @@ const App = () => {
         setSmurfs(res.data)
       })
       .catch(err => console.error('error in GET', err))
-  }, [])
+  }, [smurfs])
   console.log("smurfs STATE", smurfs)
 
 
@@ -35,7 +35,7 @@ const App = () => {
         console.log('POST', res)
       })
       .catch(err => console.error('error in POST', err))
-
+      // window.location.reload()
   }
 
 
