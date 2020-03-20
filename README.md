@@ -22,11 +22,37 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
+- [ ] What problem does the context API help solve? 
+      ```
+      Context API solves the issue of prop drilling by allowing developers to wrap their state around the app tree. 
+      Giving developers a way to provide necessary state to components that need them.
+      ```
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+      ```
+      * Actions are objects that describe a change in the store state, and their role is to hold both the data (action. payload) that is going to be changed and the description of that change (action.type). They are also the place where one has access to middleware and and where one would perform async operations.
+
+      * Reducers are pure functions that change the state depending on what the type of a actions is. Reducers take in state and a action as arguments. Reducers complete a change in state only when an action has been dispatched successfully.
+      ```
+
+      *the Store is the signle source of truth when it comes to the app state. The store takes in an initial state and any relevant middleware. The store can be distributed to any part of the Application through the connect Higher Order Component. The store is the single source of truth because all of the state is held there and it is always up to date. 
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+      ```
+      Application state refers to the state that can be avaialble to any component on the component tree. One would use this when there are many components that rely on very specific parts of state but at different level of the component.
+
+      Component state refers to state that is exclusively known to a component. One would use this for form managment since typically a form only needs to know the data being collected and nothing more. 
+      ```
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+      ```
+      redux-thunk is a library that provides a middleware out of the box. The middleware (thunk) allows one to perform asynchronous actions. It gives action-creators access to dispatch through a second function. 
+      ```
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+      ```
+      I am leaning towards redux (for larger applications) because of the ability to track state changes explicitly. I think that redux allows for better user experience since one could provide a better experience depending on specific state patterns. I am excited to keep learning more about redux. 
+      ```
 
 ## Project Set Up
 

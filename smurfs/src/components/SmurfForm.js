@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SmurfForm = ({newSmurf}) => {
+const SmurfForm = ( {newSmurf} ) => {
 
     const [smurf, setSmurf] = useState({
         name: '',
@@ -9,7 +9,7 @@ const SmurfForm = ({newSmurf}) => {
     })
 
     const handleChange = (e) => {
-        const {name, value} = e.target
+        const { name, value } = e.target
 
         setSmurf({
             ...smurf,

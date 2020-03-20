@@ -9,7 +9,7 @@ import SmurfForm from './SmurfForm.js'
 const App = () => {
   const [smurfs, setSmurfs] = useState([])
 
-  
+
   useEffect(() => {
     axios.get(`http://localhost:3333/smurfs`)
       .then(res => {
@@ -22,6 +22,7 @@ const App = () => {
 
 
   const newSmurf = smurf => {
+  
     //change age to number
     const submitSmurf = {
       name: smurf.name,
